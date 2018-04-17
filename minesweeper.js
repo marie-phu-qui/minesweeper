@@ -16,7 +16,7 @@ var boardSize = 16;
         isMarked: false,
         hidden: true,
         surroundingMines: 0,
-        isMine : (Math.random()<0.5),
+        isMine : (Math.random()<0.3),
       });
     }
   }
@@ -51,6 +51,14 @@ function checkForWin () {
   }
   lib.displayMessage('You win!');
 }
+
+// Restart game function 
+// Resetting the board to its default state. 
+// Put classes back the way they were at the start, and re-initialise the global board object.
+function restartGame (board){
+  createBoard();
+}
+
 
   // You can use this function call to declare a winner (once you've
   // detected that they've won, that is!)
