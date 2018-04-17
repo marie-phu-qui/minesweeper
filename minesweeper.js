@@ -6,8 +6,7 @@ function createBoard(){
 board = {
   cells : [],
 };
-var boardSize = 16;
-
+var boardSize = 9;
   for (var i = 0; i < Math.sqrt(boardSize); i++) {
     for (var j = 0; j < Math.sqrt(boardSize); j++) {
       board.cells.push ({
@@ -30,7 +29,6 @@ function startGame () {
     countSurroundingMines(board.cells[i]);
     board.cells[i].surroundingMines = countSurroundingMines(board.cells[i]);
   }
-
   document.addEventListener('click', checkForWin);
   document.addEventListener('contextmenu', checkForWin);
   lib.initBoard()
@@ -55,10 +53,10 @@ function checkForWin () {
 // Restart game function 
 // Resetting the board to its default state. 
 // Put classes back the way they were at the start, and re-initialise the global board object.
-function restartGame (board){
-  createBoard();
-}
 
+function restartGame(){
+  location.reload();
+};
 
   // You can use this function call to declare a winner (once you've
   // detected that they've won, that is!)
@@ -84,4 +82,3 @@ function countSurroundingMines(cell) {
   }
   return count
 }
-
