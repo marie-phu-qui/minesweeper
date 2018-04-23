@@ -5,7 +5,7 @@ var board = {};
 
 function releaseMines(){
   prompt('How many possums do you want to release : ')
-}
+};
 
 function createBoard(){
 board = {
@@ -25,7 +25,7 @@ var boardSize = 9;
     }
   }
 return board;
-}
+};
 
 function countSurroundingMines(cell) {
   var surrounding = lib.getSurroundingCells(cell.row, cell.col);
@@ -39,7 +39,7 @@ function countSurroundingMines(cell) {
     }
   }
   return count
-}
+};
 
 function startGame () {
   createBoard();
@@ -51,7 +51,7 @@ function startGame () {
   document.addEventListener('click', checkForLost);
   document.addEventListener('contextmenu', checkForWin);
   lib.initBoard()
-}
+};
 
 function checkForWin () {
   for (var i = 0; i <board.cells.length; i++) {
@@ -64,7 +64,7 @@ function checkForWin () {
   }
   lib.displayMessage('You win!');
   playSound('sound-win');
-}
+};
 
 function checkForLost () {
   for (var i = 0; i <board.cells.length; i++) {
@@ -82,21 +82,21 @@ function restartGame(){
   };
   clearBoard();
   startGame();
-  stopSound();
+  stopSound('sound-win');
 };
 
 
 // Play sound 
 function playSound(sound){
-  var sound = document.getElementById('sound');
+  var sound = document.getElementById(sound);
   sound.play();
-}
+};
 
 
 function stopSound(sound){
-  var sound = document.getElementById('sound');
+  var sound = document.getElementById(sound);
   sound.pause();
-}
+};
 
 
 
