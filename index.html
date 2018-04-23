@@ -6,12 +6,16 @@
     <script src="lib/tests.js"></script>
     <script src="lib/lib.js"></script>
     <script src="minesweeper.js"></script>
+    <audio id='sound'>
+      <source id='sound-win' src='audio/TuiSound.mp3'></source>
+      <source id='sound-lost' src='audio/Possum.mp3'></source>
+     </audio>
   </head>
   <body>
     <div id="message"></div>
     <div id="notes"></div>
     <div class="board"></div>
     <br>
-    <div><button class='restart' onclick='restartGame()'>Restart game</button></div>
+    <div><button onclick='restartGame()'>Restart game</button></div>
   </body>
 </html>
